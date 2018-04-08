@@ -2,7 +2,7 @@ import React from 'react';
 import nba from 'nba';
 import { ShotChart } from './ShotChart';
 import { Profile } from "./Profile";
-import { News } from './News';
+import { NewsList } from './NewsList';
 
 export class Main extends React.Component {
     state = {
@@ -22,13 +22,15 @@ export class Main extends React.Component {
 
     render() {
         return (
-            <div className="main">
-                <Profile
-                    playerId={this.state.playerId}
-                    playerInfo={this.state.playerInfo}
-                />
-                <ShotChart playerId={2544}/>
-                <News playerName={"Stephen Curry"}/>
+            <div className="container">
+                <div className="main">
+                    <Profile
+                        playerId={this.state.playerId}
+                        playerInfo={this.state.playerInfo}
+                    />
+                    <ShotChart playerId={2544}/>
+                </div>
+                <NewsList className="news-list" playerName={"LeBron James"}/>
             </div>
         );
     }

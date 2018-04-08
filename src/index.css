@@ -3,6 +3,7 @@
 @import 'styles/ShotChart.css';
 @import 'styles/Profile.css';
 @import 'styles/main.css';
+@import 'styles/NewsList.css';
 
 body {
   margin: 0;
