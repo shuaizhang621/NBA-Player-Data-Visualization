@@ -4,6 +4,7 @@
 @import 'styles/Profile.css';
 @import 'styles/main.css';
 @import 'styles/NewsList.css';
+@import 'styles/DataCiewContainer.css';
 
 body {
   margin: 0;

@@ -3,19 +3,28 @@ import nba from 'nba';
 import { ShotChart } from './ShotChart';
 import { Profile } from "./Profile";
 import { NewsList } from './NewsList';
+import { DataViewContainer } from "./DataViewContainer";
 
 export class Main extends React.Component {
     state = {
-        playerId: nba.findPlayer('Stephen Curry').playerId,
         playerInfo: {},
     }
 
+    handleSelectPlayer = (name) => {
+        this.loadPlayerInfo(name);
+    }
+
     componentDidMount() {
-        nba.stats.playerInfo({ PlayerID: this.state.playerId }).then((info) => {
+        this.loadPlayerInfo('Stephen Curry');
+    }
+
+    loadPlayerInfo = (playerName) => {
+        const id = nba.findPlayer(playerName).playerId;
+        nba.stats.playerInfo({ PlayerID: id }).then((info) => {
             const playerInfo = Object.assign(info.commonPlayerInfo[0], info.playerHeadlineStats[0]);
             console.log(playerInfo);
             this.setState({
-                playerInfo: playerInfo,
+                playerInfo: playerInfo
             });
         });
     }
@@ -25,12 +34,11 @@ export class Main extends React.Component {
             <div className="container">
                 <div className="main">
                     <Profile
-                        playerId={this.state.playerId}
                         playerInfo={this.state.playerInfo}
                     />
-                    <ShotChart playerId={2544}/>
+                    <DataViewContainer playerId={this.state.playerInfo.playerId}/>
                 </div>
-                <NewsList className="news-list" playerName={"LeBron James"}/>
+                <NewsList className="news-list" playerName={"Warriors Stephen Curry"}/>
             </div>
         );
     }
