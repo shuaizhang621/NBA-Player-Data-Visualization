@@ -1,10 +1,8 @@
 import { List, message, Avatar, Spin } from 'antd';
-import reqwest from 'reqwest';
 import React from 'react';
 import InfiniteScroll from 'react-infinite-scroller';
 import $ from "jquery"
 import { API_KEY } from "../constants"
-const fakeDataUrl = 'https://randomuser.me/api/?results=5&inc=name,gender,email,nat&noinfo';
 
 export class NewsList extends React.Component {
     state = {
@@ -13,16 +11,6 @@ export class NewsList extends React.Component {
         hasMore: true,
     }
     getData = (callback) => {
-        // reqwest({
-        //     url: fakeDataUrl,
-        //     type: 'json',
-        //     method: 'get',
-        //     contentType: 'application/json',
-        //     success: (res) => {
-        //         console.log(res);
-        //         callback(res);
-        //     },
-        // });
         $.ajax({
             method: 'GET',
             url: `https://newsapi.org/v2/everything?q=${this.props.playerName}&sortBy=popularity&apiKey=${API_KEY}`,
@@ -82,9 +70,6 @@ export class NewsList extends React.Component {
                         renderItem={item => (
                             <List.Item id="list-item" clakey={item.id}>
                                 <List.Item.Meta
-                                    // avatar={<Avatar className="avatar"
-                                    //                 src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-                                    // />}
                                     title={<a href={item.url}>{item.title}</a>}
                                     description={item.source.name}
                                 />
