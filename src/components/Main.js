@@ -1,6 +1,5 @@
 import React from 'react';
 import nba from 'nba';
-import { ShotChart } from './ShotChart';
 import { Profile } from "./Profile";
 import { NewsList } from './NewsList';
 import { DataViewContainer } from "./DataViewContainer";
@@ -11,10 +10,6 @@ export class Main extends React.Component {
         playerInfo: {},
     }
 
-    handleSelectPlayer = (name) => {
-        this.loadPlayerInfo(name);
-    }
-
     componentDidMount() {
         this.loadPlayerInfo('Stephen Curry');
     }
@@ -23,9 +18,8 @@ export class Main extends React.Component {
         const id = nba.findPlayer(playerName).playerId;
         nba.stats.playerInfo({ PlayerID: id }).then((info) => {
             const playerInfo = Object.assign(info.commonPlayerInfo[0], info.playerHeadlineStats[0]);
-            console.log(playerInfo);
             this.setState({
-                playerInfo: playerInfo
+                playerInfo: playerInfo,
             });
         });
     }
@@ -33,7 +27,7 @@ export class Main extends React.Component {
     render() {
         return (
             <div className="container">
-                <SearchBar/>
+                <SearchBar loadPlayerInfo={this.loadPlayerInfo}/>
                 <div className="main-top">
                     <div className="main">
                         <Profile
