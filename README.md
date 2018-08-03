@@ -1,14 +1,35 @@
 ### Preview of this project
+
+This react application contains a dashboard to visualize individual player's shot data and a news board showing the recent news about this player.
+
+The slide bar at bottom is a filter to provide more detailed visualization areas where the player is more likely to shoot.
+
 <img src="https://raw.githubusercontent.com/shuaizhang621/NBA-Player-Data-Visualization/master/readmeImage/1.jpeg" width = "800" alt="login" align=center/>
 
 #### Dashboard for NBA player
+
+The dashboard has two ways to show data. One is hex dot with shooting percentage. The other one is scatter pot showing this player's all shooting position.
+
 <img src="https://raw.githubusercontent.com/shuaizhang621/NBA-Player-Data-Visualization/master/readmeImage/2.jpeg" width = "600" alt="login" align=center/>
 
-#### Shooting posiiton plot
 <img src="https://raw.githubusercontent.com/shuaizhang621/NBA-Player-Data-Visualization/master/readmeImage/3.jpeg" width = "600" alt="login" align=center/>
 
+The slide bar at bottom is a filter to provide more detailed visualization areas where the player is more likely to shoot.
+
+As a example, we can find out without effort that Stephen Curry is a outside player while Anthony Davis is a inside player.
+
+<img src="https://raw.githubusercontent.com/shuaizhang621/NBA-Player-Data-Visualization/master/readmeImage/5.jpeg" width = "400" alt="login" align=center/><img src="https://raw.githubusercontent.com/shuaizhang621/NBA-Player-Data-Visualization/master/readmeImage/6.jpeg" width = "400" alt="login" align=center/>
+
+
 #### Search for player info
+
+Of course we implemented a search function for user to search players.
+
 <img src="https://raw.githubusercontent.com/shuaizhang621/NBA-Player-Data-Visualization/master/readmeImage/4.jpeg" width = "600" alt="login" align=center/>
+
+
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
