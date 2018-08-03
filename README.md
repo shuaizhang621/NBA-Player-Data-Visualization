@@ -1,14 +1,14 @@
 ### Preview of this project:
-<img src="https://raw.githubusercontent.com/shuaizhang621/NBA-Player-Data-Visualization/master/readmeImage/1.jpeg" width = "600" alt="login" align=center/>
+<img src="https://raw.githubusercontent.com/shuaizhang621/NBA-Player-Data-Visualization/master/readmeImage/1.jpeg" width = "800" alt="login" align=center/>
 
 Dashboard for NBA player:
-<img src="https://raw.githubusercontent.com/shuaizhang621/NBA-Player-Data-Visualization/master/readmeImage/2.jpeg" width = "600" alt="login" align=center/>
+<img src="https://raw.githubusercontent.com/shuaizhang621/NBA-Player-Data-Visualization/master/readmeImage/2.jpeg" width = "600" alt="login" align=left/>
 
 Shooting posiiton plot:
-<img src="https://raw.githubusercontent.com/shuaizhang621/NBA-Player-Data-Visualization/master/readmeImage/3.jpeg" width = "600" alt="login" align=center/>
+<img src="https://raw.githubusercontent.com/shuaizhang621/NBA-Player-Data-Visualization/master/readmeImage/3.jpeg" width = "600" alt="login" align=left/>
 
 Search for player info:
-<img src="https://raw.githubusercontent.com/shuaizhang621/NBA-Player-Data-Visualization/master/readmeImage/4.jpeg" width = "600" alt="login" align=center/>
+<img src="https://raw.githubusercontent.com/shuaizhang621/NBA-Player-Data-Visualization/master/readmeImage/4.jpeg" width = "600" alt="login" align=left/>
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
