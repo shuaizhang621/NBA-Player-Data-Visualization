@@ -4,16 +4,26 @@ import { Profile } from "./Profile";
 import { NewsList } from './NewsList';
 import { DataViewContainer } from "./DataViewContainer";
 import {SearchBar} from "./SearchBar"
-import { DEFAULT_PLAYER_INFO } from "../constants"
+import {API_KEY, DEFAULT_PLAYER_INFO} from "../constants"
+import $ from "jquery"
 
 
 export class Main extends React.Component {
     state = {
         playerInfo: DEFAULT_PLAYER_INFO,
+        data: [],
     }
 
     componentDidMount() {
         this.loadPlayerInfo(this.state.playerInfo.fullName);
+    }
+
+    componentWillMount() {
+        this.getData((res) => {
+            this.setState({
+                data: res,
+            });
+        });
     }
 
     loadPlayerInfo = (playerName) => {
@@ -23,6 +33,21 @@ export class Main extends React.Component {
             this.setState({
                 playerInfo: playerInfo,
             });
+        });
+    }
+
+    getData = (callback) => {
+        console.log("news name:", this.state.playerInfo.fullName);
+        $.ajax({
+            method: 'GET',
+            url: `https://newsapi.org/v2/everything?q=${this.state.playerInfo.fullName}&sortBy=popularity&apiKey=${API_KEY}`,
+        }).then((response) => {
+            console.log('news:')
+            console.log(response.articles);
+            callback(response.articles);
+        }, (error) => {
+            console.log('error:')
+            console.log(error);
         });
     }
 
@@ -37,7 +62,7 @@ export class Main extends React.Component {
                         />
                         <DataViewContainer playerId={this.state.playerInfo.playerId}/>
                     </div>
-                    <NewsList className="news-list" playerName={this.state.playerInfo.fullName}/>
+                    <NewsList className="news-list" playerInfo={this.state.playerInfo} data={this.state.data}/>
                 </div>
             </div>
         );

@@ -6,30 +6,8 @@ import { API_KEY } from "../constants"
 
 export class NewsList extends React.Component {
     state = {
-        data: [],
         loading: false,
         hasMore: true,
-    }
-    getData = (callback) => {
-        $.ajax({
-            method: 'GET',
-            url: `https://newsapi.org/v2/everything?q=${this.props.playerName}&sortBy=popularity&apiKey=${API_KEY}`,
-        }).then((response) => {
-            console.log('news:')
-            console.log(response.articles);
-            callback(response.articles);
-        }, (error) => {
-            console.log('error:')
-            console.log(error);
-        });
-    }
-
-    componentWillMount() {
-        this.getData((res) => {
-            this.setState({
-                data: res,
-            });
-        });
     }
 
     handleInfiniteOnLoad = () => {
@@ -66,7 +44,7 @@ export class NewsList extends React.Component {
                     useWindow={false}
                 >
                     <List
-                        dataSource={this.state.data}
+                        dataSource={this.props.data}
                         renderItem={item => (
                             <List.Item id="list-item" clakey={item.id}>
                                 <List.Item.Meta
