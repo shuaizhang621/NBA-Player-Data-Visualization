@@ -2,8 +2,6 @@
 
 This react application contains a dashboard to visualize individual player's shot data and a news board showing the recent news about this player.
 
-The slide bar at bottom is a filter to provide more detailed visualization areas where the player is more likely to shoot.
-
 <img src="https://raw.githubusercontent.com/shuaizhang621/NBA-Player-Data-Visualization/master/readmeImage/1.jpeg" width = "800" alt="login" align=center/>
 
 #### Dashboard for NBA player
